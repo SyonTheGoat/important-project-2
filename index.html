@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7fb">
+  <meta name="description" content="A bright little arcade of free games that you can play offline.">
+  <title>Playroom — little games, big fun</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="more-games.js" defer></script>
+  <script src="javascript.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Playroom home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>playroom<span class="brand-dot">.</span></span>
+    </a>
+    <div class="offline-pill"><span class="status-dot"></span><span id="connection-label">Ready to play offline</span></div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="sparkle">✦</span> YOUR POCKET-SIZED ARCADE</p>
+        <h1 id="hero-title">Boredom,<br>meet your <span>match.</span></h1>
+        <p class="hero-description">Good games. Good vibes. No Wi-Fi, no ads, no problem.</p>
+        <a class="hero-link" href="#games">Find your next game <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-sun"></div>
+        <span class="float-shape shape-star">✦</span>
+        <span class="float-shape shape-heart">♥</span>
+        <span class="float-shape shape-circle"></span>
+        <div class="art-card card-back"></div>
+        <div class="art-card card-front">
+          <span class="controller">🎮</span>
+          <span class="card-caption">tiny games<br><b>BIG FUN</b></span>
+        </div>
+        <span class="float-shape shape-spark">✧</span>
+      </div>
+    </section>
+
+    <section class="library" id="games" aria-labelledby="games-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PICK A VIBE</p>
+          <h2 id="games-title">The game shelf<span class="heading-period">.</span></h2>
+        </div>
+        <p class="game-count" id="game-count">6 games to explore</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <span class="sr-only">Search games</span>
+          <input id="game-search" type="search" placeholder="Search games..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="filters" role="group" aria-label="Filter by genre">
+          <button class="filter-chip active" data-genre="all" type="button">All games</button>
+          <button class="filter-chip" data-genre="puzzle" type="button">🧩 Puzzle</button>
+          <button class="filter-chip" data-genre="arcade" type="button">🕹️ Arcade</button>
+          <button class="filter-chip" data-genre="classic" type="button">✨ Classic</button>
+          <button class="filter-chip" data-genre="word" type="button">🔤 Word</button>
+          <button class="filter-chip" data-genre="strategy" type="button">♟️ Strategy</button>
+        </div>
+      </div>
+
+      <div class="game-grid" id="game-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span aria-hidden="true">🔎</span>
+        <h3>No games found</h3>
+        <p>Try a different search or pick another vibe.</p>
+      </div>
+    </section>
+
+    <section class="promise-bar" aria-label="Playroom promises">
+      <div><span class="promise-icon">📵</span><span><b>Works offline</b><small>Perfect for plane rides</small></span></div>
+      <div><span class="promise-icon">🚫</span><span><b>Zero ads</b><small>Just games, always</small></span></div>
+      <div><span class="promise-icon">🫶</span><span><b>For everyone</b><small>Easy to pick up and play</small></span></div>
+    </section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✦</span><span>playroom<span class="brand-dot">.</span></span></a><p>Made for the in-between moments. <span>♥</span></p></footer>
+
+  <div class="game-dialog" id="game-dialog" aria-hidden="true">
+    <div class="dialog-backdrop" data-close-dialog></div>
+    <section class="dialog-panel" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <div class="dialog-topline">
+        <div><p class="eyebrow" id="dialog-genre">GAME TIME</p><h2 id="dialog-title">Game title</h2></div>
+        <button class="icon-button" id="close-dialog" type="button" aria-label="Close game">×</button>
+      </div>
+      <p class="dialog-instructions" id="dialog-instructions"></p>
+      <div id="game-content" class="game-content"></div>
+      <p class="game-message" id="game-message" aria-live="polite"></p>
+    </section>
+  </div>
+</body>
+</html>
